@@ -1,0 +1,6 @@
+torch
+transformers>=4.50.0
+datasets
+python-chess
+huggingface_hub
+numpy
