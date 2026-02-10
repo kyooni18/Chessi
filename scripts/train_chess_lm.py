@@ -87,8 +87,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--intermediate-size", type=int, default=1024)
     parser.add_argument("--dropout", type=float, default=0.1)
     parser.add_argument("--batch-size", type=int, default=128)
-    parser.add_argument("--num-epochs", type=int, default=6)
-    parser.add_argument("--learning-rate", type=float, default=3e-4)
+    parser.add_argument("--num-epochs", type=int, default=4)
+    parser.add_argument("--learning-rate", type=float, default=3.3e-4)
     parser.add_argument("--weight-decay", type=float, default=0.01)
     parser.add_argument("--grad-clip", type=float, default=1.0)
     parser.add_argument("--seed", type=int, default=7)
@@ -96,7 +96,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device", default="auto")
     parser.add_argument("--log-every", type=int, default=100)
     return parser.parse_args()
-
 
 def set_seed(seed: int) -> None:
     random.seed(seed)

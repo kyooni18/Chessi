@@ -52,7 +52,20 @@ Output format is move-only list, e.g.:
 [Nf6, a6, d6, Bc5, Be7]
 ```
 
-## 4) Export to Transformers format
+## 4) PyQt GUI app
+
+```bash
+python chess_lm_gui.py
+```
+
+GUI features:
+- AI vs human chess game
+- click-to-move pieces on visual board
+- `ChessGameManager` based game state tracking
+- turn-by-turn synchronization (`Chessi.gm = GUI CGM`)
+- SAN load/undo/suggest/play-AI controls for testing
+
+## 5) Export to Transformers format
 
 ```bash
 python scripts/export_hf_transformers.py \
@@ -60,7 +73,7 @@ python scripts/export_hf_transformers.py \
   --output-dir hf_export/chessi-0.1
 ```
 
-## 5) Upload to Hugging Face
+## 6) Upload to Hugging Face
 
 ```bash
 python scripts/export_hf_transformers.py \
@@ -70,7 +83,7 @@ python scripts/export_hf_transformers.py \
   --push-to-hub
 ```
 
-## 6) Use from Transformers
+## 7) Use from Transformers
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM

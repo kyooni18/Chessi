@@ -4,3 +4,4 @@ datasets
 python-chess
 huggingface_hub
 numpy
+PyQt6
