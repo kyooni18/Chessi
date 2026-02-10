@@ -192,7 +192,6 @@ class ChessLMWindow(QMainWindow):
         form.addRow("", self.force_download_input)
         form.addRow("Human Color", self.human_color_input)
         form.addRow("", self.auto_ai_input)
-        form.addRow("Top-K", self.top_k_input)
         form.addRow("Temperature", self.temperature_input)
         form.addRow("Moves (SAN)", self.moves_input)
         left_panel.addLayout(form)

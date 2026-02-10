@@ -29,7 +29,7 @@ class Chessi:
             if torch.cuda.is_available():
                 return torch.device("cuda")
             if getattr(torch.backends, "mps", None) and torch.backends.mps.is_available():
-                return torch.device("mps")
+                return torch.device("cpu")
             return torch.device("cpu")
         return torch.device(device)
 
@@ -127,7 +127,7 @@ class Chessi:
         return [move for move, _ in predictions]
 
     def predict(self, moves: str, top_k: int = 10) -> str:
-        predictions = self.gen(moves=moves, top_k=100)
+        predictions = self.gen(moves=moves, top_k=1000)
         if not predictions:
             raise RuntimeError("Model returned no SAN candidates.")
 
