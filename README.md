@@ -65,7 +65,36 @@ GUI features:
 - turn-by-turn synchronization (`Chessi.gm = GUI CGM`)
 - SAN load/undo/suggest/play-AI controls for testing
 
-## 5) Export to Transformers format
+## 5) Web app (human vs AI)
+
+Export model assets for browser inference:
+
+```bash
+python scripts/export_webgpu_onnx.py \
+  --repo-id kyooni18/chessi-0.1 \
+  --output-dir web/model
+```
+
+Serve static files (no backend inference server):
+
+```bash
+cd web
+python3 -m http.server 5173
+```
+
+Then open `http://127.0.0.1:5173/static/`.
+
+Web behavior:
+- all move generation runs on-device in the browser (`onnxruntime-web`)
+- model loading indicator shown on board
+- click-to-move board for human
+- automatic AI response after each legal human move
+- checkmate/stalemate/draw overlay shown directly from client-side game state
+
+Optional model override at runtime:
+- define `window.CHESSI_MODEL_URL` and/or `window.CHESSI_VOCAB_URL` before loading `/static/app.js`
+
+## 6) Export to Transformers format
 
 ```bash
 python scripts/export_hf_transformers.py \
@@ -73,7 +102,7 @@ python scripts/export_hf_transformers.py \
   --output-dir hf_export/chessi-0.1
 ```
 
-## 6) Upload to Hugging Face
+## 7) Upload to Hugging Face
 
 ```bash
 python scripts/export_hf_transformers.py \
@@ -83,12 +112,12 @@ python scripts/export_hf_transformers.py \
   --push-to-hub
 ```
 
-## 7) Use from Transformers
+## 8) Use from Transformers
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-repo = "Kyoung1229/chessi-0.1"
+repo = "kyooni18/chessi-0.1"
 tokenizer = AutoTokenizer.from_pretrained(repo, trust_remote_code=True, use_fast=False)
 model = AutoModelForCausalLM.from_pretrained(repo, trust_remote_code=True)
 

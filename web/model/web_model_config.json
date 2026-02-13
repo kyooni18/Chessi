@@ -1,0 +1,11 @@
+{
+  "repo_id": "kyooni18/chessi-0.1",
+  "onnx_file": "chessi.onnx",
+  "vocab_file": "vocab.json",
+  "input_dtype": "int32",
+  "fixed_seq_len": 32,
+  "bos_token_id": 1,
+  "sep_token_id": 2,
+  "pad_token_id": 0,
+  "unk_token_id": 3
+}
