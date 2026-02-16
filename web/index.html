@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chessi Board</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <section class="board-shell" aria-label="chess game">
+        <div id="board" class="board" aria-label="chess board"></div>
+        <div id="model-indicator" class="model-indicator" aria-live="polite"></div>
+        <div id="result-overlay" class="result-overlay hidden" aria-live="polite">
+          <p id="result-title" class="result-title"></p>
+          <p id="result-subtitle" class="result-subtitle"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js" defer></script>
+    <script src="./app.js?v=20260213-1608" defer></script>
+  </body>
+</html>

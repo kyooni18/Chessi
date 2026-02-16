@@ -1,0 +1,17 @@
+.git
+.gitignore
+.DS_Store
+__pycache__/
+**/__pycache__/
+*.pyc
+output/
+hf_export/
+chess_lm/
+hf_chess_lm/
+scripts/
+test.py
+chess_lm_gui.py
+chessgamemanager.py
+Chessi.py
+requirements.txt
+progress.md

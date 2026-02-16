@@ -33,3 +33,7 @@ TODO / Next suggestions:
 - 2026-02-13: AI 선택 로직 업데이트: model top-k를 300으로 증가하고, 생성 후보 전부를 복제 보드에서 SAN 합법성 검사 후 첫 합법 수를 채택하도록 변경.
 - 2026-02-13: `render_game_to_text`에 `ai_candidate_trace`(generated/checked/legalCount/chosen) 추가.
 - 2026-02-13: 브라우저 검증에서 fallback AI 경로 기준 `ai_candidate_trace` 확인 완료.
+- 2026-02-16: `/` 진입점 지원을 위해 `web/index.html`, `web/app.js`, `web/styles.css`, `web/pieces/*`를 루트에 배치.
+- 2026-02-16: 루트 진입 기준 상대 경로로 수정 (`./styles.css`, `./app.js`, `pieces/*`, `model/*`).
+- 2026-02-16: 컨테이너 실행용 `Dockerfile` 추가. `web/`만 복사해 `python -m http.server 5173`로 정적 서빙.
+- 2026-02-16: 빌드 컨텍스트 경량화를 위해 `.dockerignore` 추가.
